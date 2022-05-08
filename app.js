@@ -18,7 +18,7 @@ async function mapLocation(){
 
     // Removes the loading animation when the map loads
     let loading = document.getElementById('loadingBox');
-    loading.remove();
+    loading.remove();;
 
 }
 
