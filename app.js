@@ -16,10 +16,25 @@ async function mapLocation(){
         minZoom: '15',
     }).addTo(map)
 
+    //Marks user's location on the map
+    let marker = L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map);
+    //Popup to inform the user that they are here
+    marker.addTo(map).bindPopup('You are here.').openPopup();
+
     // Removes the loading animation when the map loads
-    let loading = document.getElementById('loadingBox');
-    loading.remove();;
+    let loading = document.getElementById('loadingIcon');
+    loading.remove();
 
 }
 
 mapLocation();
+
+// Button for selecting desired place
+let chosenPlace = document.getElementById('submitPlace');
+//Eventlistener on the button
+chosenPlace.addEventListener('click', async (event) => {
+    event.preventDefault();
+    //Get places value
+    let place = document.getElementById('places').value;
+    console.log(place)
+})
