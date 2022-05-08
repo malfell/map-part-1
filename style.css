@@ -1,8 +1,25 @@
-* {
+/* * {
     background-color: rgb(115, 138, 186);
+} */
+
+/* Loading animation */
+/* Should eventually have it in the middle of the screen */
+#loadingBox{
+    text-align: left;
 }
 
 /* Map styling */
 #map {
     height: 500px;
+}
+
+
+/* Coordinates Button Styling */
+#coordButton{
+    background-color: rgb(55, 153, 55);
+}
+
+/* Set to change color on hover */
+#coordButton:hover{
+    background-color: rgb(82, 210, 82);
 }

@@ -26,10 +26,37 @@
     <!-- Icon by Royyan Wijaya -->
     <link rel="icon" href="assets\travel-holiday-vacation-310_89073.ico" alt="old map">
 
+    <!-- Font Awesome link -->
+    <script src="https://kit.fontawesome.com/8d0f117fd6.js" crossorigin="anonymous"></script>
+
     <title>Interactive Map</title>
 </head>
 <body>
+    <!-- Dropdown menu -->
+    <div>
+        <form>
+            <label for="places">Select your heart's desire: </label>
+            <select id="places" name="places">
+                <option value="coffee">Coffee</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="hotel">Hotel</option>
+                <option value="market">Market</option>
+            </select>
+            <button type="button" id="submitPlace">Submit</button>
+        </form>
+    </div>
+
+    <!-- Loading icon -->
+    <div id="loadingBox">
+        <i class="fa fa-spinner fa-pulse fa-4x fa-fw" aria-hidden="true"></i>
+        <span class="sr-only">Loading...</span>
+        <p>Loading Map...</p>
+    </div>
+    
     <!-- Placement of the map  -->
+    <!-- <div>
+        <button type="button" id="coordButton">Find My Coordinates</button>
+    </div> -->
     <div id="map"></div>
     
 </body>

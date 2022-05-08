@@ -1,12 +1,25 @@
 // MAP SETUP
 
-// Geographical coordinates: 51.505, -0.09
-//Zoom Level: 13
-const map = L.map('map').setView([51.505, -0.09], 13);
+// Gets the user's coordinates and then maps their location
+async function mapLocation(){
+    // Uses promise to obtain coordinates
+    pos = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    })
 
-//Need a map layer!
-//That {s}, {z}, {x}, and {y} are very important here
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    minZoom: '15',
-}).addTo(map)
+    //Uses coordinates to initialize the map
+    let map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 13);
+
+    //Adds tilelayer to map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        minZoom: '15',
+    }).addTo(map)
+
+    // Removes the loading animation when the map loads
+    let loading = document.getElementById('loadingBox');
+    loading.remove();
+
+}
+
+mapLocation();
