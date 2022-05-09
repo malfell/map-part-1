@@ -3,9 +3,9 @@
 } */
 
 /* Loading animation */
-/* Should eventually have it in the middle of the screen */
 #loadingIcon{
-    text-align: left;
+    text-align: center;
+    margin-top: 15em;
 }
 
 /* Map styling */

@@ -1,3 +1,8 @@
+// I talked to Josh about this, and he said I could submit as this is.
+//The Foursquare developer website isn't letting me create a new project.
+//The button is still faded out, and support hasn't gotten back to me yet.
+
+
 // MAP SETUP
 
 // Gets the user's coordinates and then maps their location
